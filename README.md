@@ -8,17 +8,38 @@ A Leiningen template for ClojureScript libraries
 
 ## Output
 
-    mylib/
+    .
     ├── project.clj
-    └── src
+    ├── src
+    │   └── mylib
+    │       └── core.cljs
+    └── test
         └── mylib
-            └── core.cljs
+            ├── core_test.cljs
+            ├── test.cljs
+            └── vendor
+                ├── console-polyfill.js
+                ├── es5-sham.js
+                └── es5-shim.js
 
-(The project file contains no `:cljsbuild` information as
-typically the library will be compiled in the project that
-consumes it.)
+## Compilation
 
-**TODO: figure out sane testing strategy**
+By default the template does not include development nor
+production builds, on the assumption that the library will
+be consumed by another project with its own compilation
+configuration.
+
+## Testing
+
+The template does however provide a test build and scaffolding
+using [clojurescript.test](https://github.com/cemerick/clojurescript.test).
+Tests are run by a function that returns 0 or 1 for success or failure
+so that they can be utilized in automated builds:
+
+    lein cljsbuild test
+
+(Necessary polyfills and shims are included so that ReactJS can
+run on PhantomJS.)
 
 ## License
 

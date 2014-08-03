@@ -5,8 +5,15 @@
 
 (def {{name}}-state (r/atom {}))
 
-(defn view []
-  [:div "view"])
+(defn view [] 
+  [:div
+   [:button
+    {:on-click #(swap! {{name}}-state assoc :active true)}
+    "activate"]
+   [:span
+    (if (:active @{{name}}-state)
+      "Active"
+      "Inactive")]])
 
 (defn render [selector]
   (let [el (.querySelector js/document (name selector))]
