@@ -3,7 +3,7 @@
   :url "http://yoururl.com"
 
   :dependencies [[org.clojure/clojure "1.6.0"]
-                 [org.clojure/clojurescript "0.0-2280"]
+                 [org.clojure/clojurescript "0.0-2307"]
                  [org.clojure/core.async "0.1.303.0-886421-alpha"]
                  [reagent "0.4.2"]]
 

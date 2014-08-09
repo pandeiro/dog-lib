@@ -1,4 +1,4 @@
-(defproject dog-lib/lein-template "0.3.0"
+(defproject dog-lib/lein-template "0.3.1"
   :description "A template for generating ClojureScript client-side libraries"
 
   :url "https://github.com/pandeiro/dog-lib"
