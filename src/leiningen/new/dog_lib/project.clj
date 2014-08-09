@@ -13,11 +13,19 @@
               [com.cemerick/austin "0.1.4"]
               [com.cemerick/clojurescript.test "0.3.1"]]
 
-    :dependencies [[com.cemerick/double-check "0.5.7"]]
+    :dependencies [[com.cemerick/double-check "0.5.7"]
+                   [com.cemerick/clojurescript.test "0.3.1"]]
 
     :cljsbuild {:builds
                 [{:id "tests"
                   :source-paths ["src" "test"]
+                  :notify-command
+                  ["phantomjs" :cljs.test/runner
+                   "window.literal_js_executed=true"
+                   "test/{{sanitized}}/vendor/es5-shim.js"
+                   "test/{{sanitized}}/vendor/es5-sham.js"
+                   "test/{{sanitized}}/vendor/console-polyfill.js"
+                   "target/tests.js"]
                   :compiler {:preamble ["reagent/react.js"]
                              :output-to "target/tests.js"
                              :optimizations :whitespace
@@ -29,4 +37,8 @@
                   "test/{{sanitized}}/vendor/es5-shim.js"
                   "test/{{sanitized}}/vendor/es5-sham.js"
                   "test/{{sanitized}}/vendor/console-polyfill.js"
-                  "target/tests.js"]}}}})
+                  "target/tests.js"]}}
+
+    :aliases {"autotest-cljs" ["do"
+                               ["cljsbuild" "clean"]
+                               ["cljsbuild" "auto" "tests"]]}}})
