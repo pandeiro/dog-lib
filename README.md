@@ -16,7 +16,7 @@ A Leiningen template for ClojureScript libraries
     └── test
         └── mylib
             ├── core_test.cljs
-            ├── test.cljs
+            ├── run.cljs
             └── vendor
                 ├── console-polyfill.js
                 ├── es5-sham.js

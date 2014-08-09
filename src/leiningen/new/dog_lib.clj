@@ -16,7 +16,7 @@
      ["project.clj"                       (render "project.clj" data)]
      [".gitignore"                        (render "gitignore" data)]
      ["src/{{sanitized}}/core.cljs"       (render "core.cljs" data)]
-     ["test/{{sanitized}}/test.cljs"      (render "test.cljs" data)]
+     ["test/{{sanitized}}/run.cljs"       (render "run.cljs" data)]
      ["test/{{sanitized}}/vendor/console-polyfill.js"
                                           (render "console-polyfill.js" data)]
      ["test/{{sanitized}}/vendor/es5-sham.js"
