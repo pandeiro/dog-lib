@@ -37,8 +37,8 @@
                   "test/{{sanitized}}/vendor/es5-shim.js"
                   "test/{{sanitized}}/vendor/es5-sham.js"
                   "test/{{sanitized}}/vendor/console-polyfill.js"
-                  "target/tests.js"]}}
+                  "target/tests.js"]}}}
 
-    :aliases {"autotest-cljs" ["do"
-                               ["cljsbuild" "clean"]
-                               ["cljsbuild" "auto" "tests"]]}}})
+   :aliases {"autotest-cljs" ["do"
+                              ["cljsbuild" "clean"]
+                              ["cljsbuild" "auto" "tests"]]}})
